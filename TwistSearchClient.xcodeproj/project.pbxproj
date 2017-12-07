@@ -15,6 +15,8 @@
 		1A42A5751FD899A9007546A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42A5741FD899A9007546A8 /* LoginViewController.swift */; };
 		1AE9558C1FD89F0F00E5E1A4 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9558B1FD89F0F00E5E1A4 /* Login.swift */; };
 		1AE9558E1FD89F8700E5E1A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9558D1FD89F8700E5E1A4 /* User.swift */; };
+		1AE955901FD8B13300E5E1A4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9558F1FD8B13300E5E1A4 /* LoginViewModel.swift */; };
+		1AE955941FD936E900E5E1A4 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE955931FD936E900E5E1A4 /* LoginResult.swift */; };
 		5A35B45A01B3DD40D0EF60F5 /* Pods_TwistSearchClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F8611C14D231C9331AC0DF /* Pods_TwistSearchClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		1A42A5741FD899A9007546A8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AE9558B1FD89F0F00E5E1A4 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		1AE9558D1FD89F8700E5E1A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1AE9558F1FD8B13300E5E1A4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1AE955931FD936E900E5E1A4 /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		A2433B165E004C54D913EA5C /* Pods-TwistSearchClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwistSearchClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwistSearchClient/Pods-TwistSearchClient.release.xcconfig"; sourceTree = "<group>"; };
 		EAA76B031F90C9525D2C30D3 /* Pods-TwistSearchClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwistSearchClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwistSearchClient/Pods-TwistSearchClient.debug.xcconfig"; sourceTree = "<group>"; };
 		F9F8611C14D231C9331AC0DF /* Pods_TwistSearchClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwistSearchClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +91,8 @@
 				1A42A5741FD899A9007546A8 /* LoginViewController.swift */,
 				1AE9558B1FD89F0F00E5E1A4 /* Login.swift */,
 				1AE9558D1FD89F8700E5E1A4 /* User.swift */,
+				1AE9558F1FD8B13300E5E1A4 /* LoginViewModel.swift */,
+				1AE955931FD936E900E5E1A4 /* LoginResult.swift */,
 			);
 			path = TwistSearchClient;
 			sourceTree = "<group>";
@@ -234,7 +240,9 @@
 				1AE9558E1FD89F8700E5E1A4 /* User.swift in Sources */,
 				1A42A5641FD89907007546A8 /* ViewController.swift in Sources */,
 				1A42A5671FD89907007546A8 /* TwistSearchClient.xcdatamodeld in Sources */,
+				1AE955941FD936E900E5E1A4 /* LoginResult.swift in Sources */,
 				1A42A5621FD89907007546A8 /* AppDelegate.swift in Sources */,
+				1AE955901FD8B13300E5E1A4 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
