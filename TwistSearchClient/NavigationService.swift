@@ -18,27 +18,49 @@ class NavigationService {
     let disposeBag = DisposeBag()
 
     init() {
-        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 600, height: 400), styleMask:[.titled, .closable], backing: .buffered, defer: false)
-        let loginViewController = LoginViewController()
-        window.contentViewController = loginViewController
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 600, height: 400),
+                              styleMask: [],
+                              backing: .buffered,
+                              defer: false)
+        window.isMovableByWindowBackground = true
+        window.center()
+        mainWindow = window
         window.title = "Twist"
         window.orderFrontRegardless()
-        mainWindow = window
 
         let controller = NSWindowController(window: window)
-        controller.showWindow(window)
         mainController = controller
 
+        let userDefaults = UserDefaults.standard
+        if let userName = userDefaults.string(forKey: "name"),
+            let userToken = userDefaults.string(forKey: "token") {
+            let userId = userDefaults.integer(forKey: "id")
+            let user = User(id: userId, token: userToken, name: userName)
+            showSearch(for: user)
+        } else {
+            showLogin()
+        }
+
+        controller.showWindow(window)
+    }
+
+    private func showLogin() {
+        let loginViewController = LoginViewController()
+        mainWindow.contentViewController = loginViewController
         loginViewController.loginResult?
+            .asDriver(onErrorJustReturn: LoginResult.error(err: LoginError.invalidResponse))
             .drive(onNext: { [weak self] result in
                 switch result {
                 case .success(let user):
-                    print("")
-                    // TODO
+                    self?.showSearch(for: user)
                 case .error(_):
                     self?.presentAlert(with: result.errorMessage)
                 }
             }).disposed(by: disposeBag)
+    }
+
+    private func showSearch(for user: User) {
+        //
     }
 
     private func presentAlert(with message: String?) {

@@ -16,7 +16,7 @@ class LoginViewController: NSViewController {
     @IBOutlet weak var passwordField: NSSecureTextField!
     @IBOutlet weak var loginButton: NSButton!
 
-    var loginResult: Driver<LoginResult>?
+    var loginResult: Observable<LoginResult>?
 
     private let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
@@ -30,7 +30,6 @@ class LoginViewController: NSViewController {
         loginResult = loginButton.rx.tap
             .withLatestFrom(input)
             .flatMap(viewModel.login)
-            .asDriver(onErrorJustReturn: LoginResult.error(err: LoginError.invalidResponse))
         #if DEBUG
             prefillFields()
         #endif

@@ -22,7 +22,7 @@ class Login {
         return URLSession.shared.rx.json(request: request)
             .map { response in
                 if let dict = response as? [String:Any],
-                    let user = User(with: dict) {
+                    let user = try? User.user(from: dict) {
                     return .success(user: user)
                 }
                 return .error(err: LoginError.invalidResponse)
