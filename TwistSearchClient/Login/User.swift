@@ -12,15 +12,13 @@ struct User {
     let token: String
     let name: String
 
-    init?(with payload: [String:Any]) {
+    static func user(from payload: [String:Any]) throws -> User {
         guard let id = payload["id"] as? Int,
             let token = payload["token"] as? String,
             let name = payload["name"] as? String else {
-                return nil
+                throw ParserError.userParserError
         }
-        self.id = id
-        self.token = token
-        self.name = name
+        return User(id: id, token: token, name: name)
     }
     
 }
