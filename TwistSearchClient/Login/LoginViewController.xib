@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LoginViewController" customModule="TwistSearchClient" customModuleProvider="target">
+            <connections>
+                <outlet property="emailField" destination="SOf-cN-Rl8" id="36v-es-hRG"/>
+                <outlet property="loginButton" destination="Quu-pO-cwy" id="ymS-Sy-MJC"/>
+                <outlet property="passwordField" destination="TAA-Kr-hMN" id="F96-aZ-UGt"/>
+                <outlet property="view" destination="ypi-Yx-aTE" id="u6S-i9-UCf"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <view wantsLayer="YES" id="ypi-Yx-aTE">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GVB-9G-kOM">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="270"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="JeD-wa-0II"/>
+                </imageView>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T4q-nR-HIH">
+                    <rect key="frame" x="262" y="77" width="196" height="116"/>
+                    <subviews>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SOf-cN-Rl8">
+                            <rect key="frame" x="0.0" y="86" width="196" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="6am-3O-Igg"/>
+                            </constraints>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="s5k-1D-ZcH">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TAA-Kr-hMN">
+                            <rect key="frame" x="0.0" y="48" width="196" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="rQC-RE-S7A"/>
+                            </constraints>
+                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="TuL-Aq-zWt">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <allowedInputSourceLocales>
+                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                </allowedInputSourceLocales>
+                            </secureTextFieldCell>
+                        </secureTextField>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Quu-pO-cwy">
+                            <rect key="frame" x="-6" y="-7" width="208" height="51"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="quY-8U-9yq"/>
+                            </constraints>
+                            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9Ye-bc-5do">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="SOf-cN-Rl8" secondAttribute="trailing" id="3dp-E7-2Dj"/>
+                        <constraint firstItem="SOf-cN-Rl8" firstAttribute="leading" secondItem="T4q-nR-HIH" secondAttribute="leading" id="6Ei-mF-XBG"/>
+                        <constraint firstAttribute="trailing" secondItem="TAA-Kr-hMN" secondAttribute="trailing" id="8GP-oR-eaf"/>
+                        <constraint firstItem="Quu-pO-cwy" firstAttribute="leading" secondItem="T4q-nR-HIH" secondAttribute="leading" id="8bT-ME-xNS"/>
+                        <constraint firstItem="TAA-Kr-hMN" firstAttribute="leading" secondItem="T4q-nR-HIH" secondAttribute="leading" id="YC8-PO-71M"/>
+                        <constraint firstAttribute="trailing" secondItem="Quu-pO-cwy" secondAttribute="trailing" id="euq-TF-YcF"/>
+                    </constraints>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="GVB-9G-kOM" firstAttribute="width" secondItem="ypi-Yx-aTE" secondAttribute="width" multiplier="0.5" id="5dP-gh-U2c"/>
+                <constraint firstItem="GVB-9G-kOM" firstAttribute="top" secondItem="ypi-Yx-aTE" secondAttribute="top" id="D1s-rG-m5I"/>
+                <constraint firstItem="T4q-nR-HIH" firstAttribute="centerY" secondItem="ypi-Yx-aTE" secondAttribute="centerY" id="cdU-9v-WhC"/>
+                <constraint firstItem="GVB-9G-kOM" firstAttribute="leading" secondItem="ypi-Yx-aTE" secondAttribute="leading" id="d5h-lK-xvh"/>
+                <constraint firstAttribute="trailing" secondItem="T4q-nR-HIH" secondAttribute="trailing" constant="22" id="dRF-ju-rsO"/>
+                <constraint firstAttribute="bottom" secondItem="GVB-9G-kOM" secondAttribute="bottom" id="nwf-8p-Fd3"/>
+                <constraint firstItem="T4q-nR-HIH" firstAttribute="leading" secondItem="GVB-9G-kOM" secondAttribute="trailing" constant="22" id="zdY-nt-0aS"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

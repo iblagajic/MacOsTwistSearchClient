@@ -29,6 +29,9 @@ enum LoginResult {
                     return error
                         .localizedDescription
                 }
+            } else if let error = error as? LoginError,
+                error == .invalidInput {
+                return "Please check your email and password and try again"
             }
         default:
             return nil
@@ -40,4 +43,5 @@ enum LoginResult {
 enum LoginError: Error {
     case invalidUrl
     case invalidResponse
+    case invalidInput
 }
