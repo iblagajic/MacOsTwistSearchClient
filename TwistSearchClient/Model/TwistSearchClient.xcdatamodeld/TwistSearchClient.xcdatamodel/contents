@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="17B1003" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="SearchQuery" representedClassName="SearchQuery" syncable="YES" codeGenerationType="class">
+        <attribute name="query" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SearchResult" inverseName="query" inverseEntity="SearchResult" syncable="YES"/>
+    </entity>
+    <entity name="SearchResult" representedClassName="SearchResult" syncable="YES" codeGenerationType="class">
+        <attribute name="details_link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="last_posted_ts" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="snippet" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="query" maxCount="1" deletionRule="Cascade" destinationEntity="SearchQuery" inverseName="results" inverseEntity="SearchQuery" syncable="YES"/>
+    </entity>
+    <entity name="Workspace" representedClassName="Workspace" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="Integer 32" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SearchResult" positionX="-54" positionY="9" width="128" height="135"/>
+        <element name="Workspace" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="SearchQuery" positionX="-54" positionY="36" width="128" height="75"/>
+    </elements>
+</model>
