@@ -23,9 +23,19 @@ class CoreDataWrapper {
     }
 
     func updateWorkspace(withPayload payload: Any) throws -> Workspace {
+        assert(Thread.isMainThread)
         let workspace = try Workspace.parse(response: payload, in: persistentContainer.viewContext)
         save()
         return workspace
+    }
+
+    func updateSearchResults(withPayload payload: Any, for query: String) throws -> [SearchResult] {
+        assert(Thread.isMainThread)
+        let context = persistentContainer.viewContext
+        let searchQuery = SearchQuery.get(query: query, context: context)
+        let searchResults = try SearchResult.parse(response: payload, in: context, for: searchQuery)
+        save()
+        return searchResults
     }
 
     func save() {

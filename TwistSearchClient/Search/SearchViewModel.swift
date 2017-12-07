@@ -11,14 +11,18 @@ import RxSwift
 class SearchViewModel {
 
     private let twist: Twist
+    let searchText = PublishSubject<String>()
     let workspace: Observable<Workspace?>
+    let searchResult: Observable<[SearchResult]>
 
     init(for user: User) {
         self.twist = Twist(with: user)
         self.workspace = twist.getWorkspace()
+        searchResult = searchText.flatMap(twist.search)
     }
 
     func signOut() -> Observable<Void> {
         return twist.signOut()
     }
+
 }

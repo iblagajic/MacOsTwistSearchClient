@@ -8,11 +8,6 @@
 
 import CoreData
 
-enum ParserError: Error {
-    case workspaceParserError
-    case userParserError
-}
-
 extension Workspace {
 
     static func parse(response: Any, in context: NSManagedObjectContext) throws -> Workspace  {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A41E92E1FD9F81E008E20C1 /* SearchQuery+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E92D1FD9F81E008E20C1 /* SearchQuery+Helper.swift */; };
+		1A41E9301FD9FA52008E20C1 /* ParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E92F1FD9FA52008E20C1 /* ParseError.swift */; };
 		1A42A5621FD89907007546A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42A5611FD89907007546A8 /* AppDelegate.swift */; };
 		1A42A5671FD89907007546A8 /* TwistSearchClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A42A5651FD89907007546A8 /* TwistSearchClient.xcdatamodeld */; };
 		1A42A5691FD89907007546A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A42A5681FD89907007546A8 /* Assets.xcassets */; };
@@ -16,6 +18,7 @@
 		1A89AD5B1FD97A8A00BCF800 /* CoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89AD5A1FD97A8A00BCF800 /* CoreDataWrapper.swift */; };
 		1A89AD5D1FD9949500BCF800 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89AD5C1FD9949500BCF800 /* SearchViewModel.swift */; };
 		1A89AD5F1FD995B200BCF800 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A89AD5E1FD995B200BCF800 /* SearchViewController.xib */; };
+		1A89AD611FD9C2DA00BCF800 /* SearchResult+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89AD601FD9C2DA00BCF800 /* SearchResult+Parse.swift */; };
 		1AE9558C1FD89F0F00E5E1A4 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9558B1FD89F0F00E5E1A4 /* Login.swift */; };
 		1AE9558E1FD89F8700E5E1A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9558D1FD89F8700E5E1A4 /* User.swift */; };
 		1AE955901FD8B13300E5E1A4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9558F1FD8B13300E5E1A4 /* LoginViewModel.swift */; };
@@ -29,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A41E92D1FD9F81E008E20C1 /* SearchQuery+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchQuery+Helper.swift"; sourceTree = "<group>"; };
+		1A41E92F1FD9FA52008E20C1 /* ParseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseError.swift; sourceTree = "<group>"; };
 		1A42A55E1FD89907007546A8 /* TwistSearchClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwistSearchClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A42A5611FD89907007546A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A42A5661FD89907007546A8 /* TwistSearchClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwistSearchClient.xcdatamodel; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		1A89AD5A1FD97A8A00BCF800 /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
 		1A89AD5C1FD9949500BCF800 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1A89AD5E1FD995B200BCF800 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		1A89AD601FD9C2DA00BCF800 /* SearchResult+Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResult+Parse.swift"; sourceTree = "<group>"; };
 		1AE9558B1FD89F0F00E5E1A4 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		1AE9558D1FD89F8700E5E1A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1AE9558F1FD8B13300E5E1A4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 				1A42A5651FD89907007546A8 /* TwistSearchClient.xcdatamodeld */,
 				1A89AD541FD96BFE00BCF800 /* Workspace+Parse.swift */,
 				1A89AD5A1FD97A8A00BCF800 /* CoreDataWrapper.swift */,
+				1A89AD601FD9C2DA00BCF800 /* SearchResult+Parse.swift */,
+				1A41E92D1FD9F81E008E20C1 /* SearchQuery+Helper.swift */,
+				1A41E92F1FD9FA52008E20C1 /* ParseError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,10 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A41E9301FD9FA52008E20C1 /* ParseError.swift in Sources */,
 				1A42A5751FD899A9007546A8 /* LoginViewController.swift in Sources */,
 				1AE955B81FD93DB200E5E1A4 /* NavigationService.swift in Sources */,
 				1AE9558C1FD89F0F00E5E1A4 /* Login.swift in Sources */,
 				1AE955981FD9381400E5E1A4 /* SearchViewController.swift in Sources */,
+				1A89AD611FD9C2DA00BCF800 /* SearchResult+Parse.swift in Sources */,
 				1AE9558E1FD89F8700E5E1A4 /* User.swift in Sources */,
 				1A89AD5D1FD9949500BCF800 /* SearchViewModel.swift in Sources */,
 				1A42A5671FD89907007546A8 /* TwistSearchClient.xcdatamodeld in Sources */,
@@ -300,6 +311,7 @@
 				1A89AD5B1FD97A8A00BCF800 /* CoreDataWrapper.swift in Sources */,
 				1A42A5621FD89907007546A8 /* AppDelegate.swift in Sources */,
 				1AE955901FD8B13300E5E1A4 /* LoginViewModel.swift in Sources */,
+				1A41E92E1FD9F81E008E20C1 /* SearchQuery+Helper.swift in Sources */,
 				1A89AD551FD96BFE00BCF800 /* Workspace+Parse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

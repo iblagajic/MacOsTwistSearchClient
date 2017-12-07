@@ -34,8 +34,26 @@ class Twist {
         request.httpMethod = "GET"
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         return URLSession.shared.rx.json(request: request)
+            .observeOn(MainScheduler.instance)
             .map(coreDataWrapper.updateWorkspace)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
+    }
+
+    func search(query: String) -> Observable<[SearchResult]> {
+        if query.isEmpty {
+            return Observable.empty()
+        }
+        guard let url = URL(string: "https://staging.twistapp.com/api/v2/search/query?query=\(query)") else {
+            return Observable.error(TwistError.invalidUrl)
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        return URLSession.shared.rx.json(request: request)
+            .observeOn(MainScheduler.instance)
+            .map { [weak self] payload in
+                return try self?.coreDataWrapper.updateSearchResults(withPayload: payload, for: query) ?? []
+            }.subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
     }
 
     func signOut() -> Observable<Void> {

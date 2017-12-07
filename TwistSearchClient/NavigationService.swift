@@ -19,7 +19,7 @@ class NavigationService {
 
     init() {
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 600, height: 400),
-                              styleMask: [],
+                              styleMask: [.titled],
                               backing: .buffered,
                               defer: false)
         window.isMovableByWindowBackground = true

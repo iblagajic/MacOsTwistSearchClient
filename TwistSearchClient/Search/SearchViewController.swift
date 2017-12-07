@@ -39,6 +39,15 @@ class SearchViewController: NSViewController {
             }).disposed(by: disposeBag)
         signOut = signOutButton.rx.tap
             .flatMap(viewModel.signOut)
+        searchField.rx.text.orEmpty.changed
+            .throttle(0.5, scheduler: MainScheduler.instance)
+            .bind(to: viewModel.searchText)
+            .disposed(by: disposeBag)
+
+        viewModel.searchResult.asDriver(onErrorJustReturn: [])
+            .drive(onNext: { result in
+                print(result)
+            }).disposed(by: disposeBag)
     }
     
 }
