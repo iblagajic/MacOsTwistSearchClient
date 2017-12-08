@@ -11,10 +11,10 @@ import CoreData
 extension Workspace {
 
     static func parse(response: Any, in context: NSManagedObjectContext) throws -> Workspace  {
-        guard let array = response as? [[String:Any]],
+        guard let array = response as? JSONArray,
             let first = array.first,
-        let id = first["id"] as? Int32,
-        let name = first["name"] as? String else {
+            let id = first["id"] as? Int32,
+            let name = first["name"] as? String else {
                 throw ParserError.workspaceParserError
         }
 

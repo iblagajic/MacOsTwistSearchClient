@@ -20,7 +20,7 @@ enum LoginResult {
                 case .httpRequestFailed(_, let data):
                     if let data = data,
                         let json = try? JSONSerialization.jsonObject(with: data, options: []),
-                        let dict = json as? [String:Any],
+                        let dict = json as? JSONDictionary,
                         let error = dict["error_string"] as? String {
                         return error
                     }

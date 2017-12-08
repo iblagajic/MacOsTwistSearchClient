@@ -45,7 +45,6 @@ class CoreDataWrapper {
     }
 
     func save() {
-        // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
         let context = persistentContainer.viewContext
 
         if !context.commitEditing() {

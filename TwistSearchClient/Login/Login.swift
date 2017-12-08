@@ -12,7 +12,7 @@ import RxSwift
 class Login {
 
     func login(withEmail email: String, password: String) -> Observable<LoginResult> {
-        guard let url = URL(string: "https://staging.twistapp.com/api/v2/users/login") else {
+        guard let url = URL(string: "\(Twist.baseUrl)/users/login") else {
             return Observable.just(.error(err: LoginError.invalidUrl))
         }
         var request = URLRequest(url: url)
@@ -21,7 +21,7 @@ class Login {
         request.httpBody = params.data(using: String.Encoding.utf8)
         return URLSession.shared.rx.json(request: request)
             .map { response in
-                if let dict = response as? [String:Any],
+                if let dict = response as? JSONDictionary,
                     let user = try? User.user(from: dict) {
                     return .success(user: user)
                 }

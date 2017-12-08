@@ -10,6 +10,12 @@ import AppKit
 
 class  SearchResultView: NSTableRowView {
 
+    static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        return dateFormatter
+    }()
+
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var snippetLabel: NSTextField!
     @IBOutlet weak var timeLabel: NSTextField!
@@ -20,12 +26,12 @@ class  SearchResultView: NSTableRowView {
     }
 
     private func setStyle() {
-        titleLabel.font = NSFont.title()
-        titleLabel.textColor = NSColor.primaryText()
-        snippetLabel.font = NSFont.body()
-        snippetLabel.textColor = NSColor.primaryText()
-        timeLabel.font = NSFont.subtitle()
-        timeLabel.textColor = NSColor.primaryText()
+        titleLabel.font = .title
+        titleLabel.textColor = .primaryText
+        snippetLabel.font = .body
+        snippetLabel.textColor = .primaryText
+        timeLabel.font = .subtitle
+        timeLabel.textColor = .primaryText
     }
 
     func update(with searchResult: SearchResult) {
@@ -33,9 +39,7 @@ class  SearchResultView: NSTableRowView {
         snippetLabel.stringValue = searchResult.snippet ?? ""
         if let interval = TimeInterval(exactly: searchResult.last_posted_ts) {
             let date = Date(timeIntervalSince1970: interval)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            timeLabel.stringValue = dateFormatter.string(from: date)
+            timeLabel.stringValue = SearchResultView.dateFormatter.string(from: date)
         }
     }
 

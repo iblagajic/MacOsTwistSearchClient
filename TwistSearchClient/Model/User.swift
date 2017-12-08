@@ -12,7 +12,7 @@ struct User {
     let token: String
     let name: String
 
-    static func user(from payload: [String:Any]) throws -> User {
+    static func user(from payload: JSONDictionary) throws -> User {
         guard let id = payload["id"] as? Int,
             let token = payload["token"] as? String,
             let name = payload["name"] as? String else {

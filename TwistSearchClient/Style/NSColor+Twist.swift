@@ -10,15 +10,15 @@ import AppKit
 
 extension NSColor {
 
-    static func action() -> NSColor {
+    static var action: NSColor {
         return NSColor(red: 63.0/255, green: 130.0/255, blue: 239.0/255, alpha: 1.0)
     }
 
-    static func primaryText() -> NSColor {
+    static var primaryText: NSColor {
         return NSColor(red: 64.0/255, green: 64.0/255, blue: 64.0/255, alpha: 1.0)
     }
 
-    static func background() -> NSColor {
+    static var background: NSColor {
         return NSColor(red: 250.0/255, green: 250.0/255, blue: 250.0/255, alpha: 1.0)
     }
 

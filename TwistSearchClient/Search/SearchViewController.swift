@@ -70,11 +70,11 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
     private func setStyle() {
         tableView.gridColor = .lightGray
         tableView.gridStyleMask = .solidHorizontalGridLineMask
-        view.layer?.backgroundColor = NSColor.action().cgColor
-        titleLabel.textColor = NSColor.white
-        titleLabel.font = NSFont.header()
+        view.layer?.backgroundColor = NSColor.action.cgColor
+        titleLabel.textColor = .white
+        titleLabel.font = .header
         searchField.focusRingType = .none
-        searchField.textColor = NSColor.primaryText()
+        searchField.textColor = .primaryText
     }
 
     func numberOfRows(in tableView: NSTableView) -> Int {

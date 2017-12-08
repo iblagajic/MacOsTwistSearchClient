@@ -10,19 +10,19 @@ import AppKit
 
 extension NSFont {
 
-    static func body() -> NSFont {
+    static var body: NSFont {
         return NSFont.systemFont(ofSize: 14)
     }
 
-    static func header() -> NSFont {
+    static var header: NSFont {
         return NSFont.systemFont(ofSize: 16, weight: .medium)
     }
 
-    static func title() -> NSFont {
+    static var title: NSFont {
         return NSFont.systemFont(ofSize: 14, weight: .medium)
     }
 
-    static func subtitle() -> NSFont {
+    static var subtitle: NSFont {
         return NSFont.systemFont(ofSize: 13)
     }
 

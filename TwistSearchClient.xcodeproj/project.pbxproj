@@ -13,6 +13,9 @@
 		1A41E9371FDA7AF6008E20C1 /* NSColor+Twist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E9361FDA7AF6008E20C1 /* NSColor+Twist.swift */; };
 		1A41E93B1FDA7E5E008E20C1 /* NSFont+Twist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E93A1FDA7E5E008E20C1 /* NSFont+Twist.swift */; };
 		1A41E93E1FDA8987008E20C1 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E93D1FDA8987008E20C1 /* ActivityIndicator.swift */; };
+		1A41E94E1FDA9C09008E20C1 /* ParserTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E94D1FDA9C09008E20C1 /* ParserTypes.swift */; };
+		1A41E9501FDA9DD4008E20C1 /* NSWindow+Twist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E94F1FDA9DD4008E20C1 /* NSWindow+Twist.swift */; };
+		1A41E9521FDA9E5B008E20C1 /* UserDefaults+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E9511FDA9E5B008E20C1 /* UserDefaults+User.swift */; };
 		1A42A5621FD89907007546A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A42A5611FD89907007546A8 /* AppDelegate.swift */; };
 		1A42A5671FD89907007546A8 /* TwistSearchClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A42A5651FD89907007546A8 /* TwistSearchClient.xcdatamodeld */; };
 		1A42A5691FD89907007546A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A42A5681FD89907007546A8 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 		1A41E9361FDA7AF6008E20C1 /* NSColor+Twist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Twist.swift"; sourceTree = "<group>"; };
 		1A41E93A1FDA7E5E008E20C1 /* NSFont+Twist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+Twist.swift"; sourceTree = "<group>"; };
 		1A41E93D1FDA8987008E20C1 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		1A41E94D1FDA9C09008E20C1 /* ParserTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTypes.swift; sourceTree = "<group>"; };
+		1A41E94F1FDA9DD4008E20C1 /* NSWindow+Twist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+Twist.swift"; sourceTree = "<group>"; };
+		1A41E9511FDA9E5B008E20C1 /* UserDefaults+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+User.swift"; sourceTree = "<group>"; };
 		1A42A55E1FD89907007546A8 /* TwistSearchClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwistSearchClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A42A5611FD89907007546A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A42A5661FD89907007546A8 /* TwistSearchClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwistSearchClient.xcdatamodel; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 			children = (
 				1A41E9361FDA7AF6008E20C1 /* NSColor+Twist.swift */,
 				1A41E93A1FDA7E5E008E20C1 /* NSFont+Twist.swift */,
+				1A41E94F1FDA9DD4008E20C1 /* NSWindow+Twist.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -129,17 +136,17 @@
 		1A42A5601FD89907007546A8 /* TwistSearchClient */ = {
 			isa = PBXGroup;
 			children = (
-				1A41E93C1FDA897B008E20C1 /* Rx */,
-				1A41E9351FDA7ADA008E20C1 /* Style */,
-				1A83E6C31FD968DC004119D0 /* Model */,
-				1AE955B71FD93DB200E5E1A4 /* NavigationService.swift */,
-				1AE955991FD93BA500E5E1A4 /* MainMenu.xib */,
-				1AE955961FD937D700E5E1A4 /* Search */,
-				1AE955951FD937B200E5E1A4 /* Login */,
-				1A42A5611FD89907007546A8 /* AppDelegate.swift */,
-				1A42A5681FD89907007546A8 /* Assets.xcassets */,
-				1A42A56D1FD89907007546A8 /* Info.plist */,
 				1A42A56E1FD89907007546A8 /* TwistSearchClient.entitlements */,
+				1A42A56D1FD89907007546A8 /* Info.plist */,
+				1A42A5611FD89907007546A8 /* AppDelegate.swift */,
+				1AE955B71FD93DB200E5E1A4 /* NavigationService.swift */,
+				1A42A5681FD89907007546A8 /* Assets.xcassets */,
+				1AE955991FD93BA500E5E1A4 /* MainMenu.xib */,
+				1AE955951FD937B200E5E1A4 /* Login */,
+				1A83E6C31FD968DC004119D0 /* Model */,
+				1A41E93C1FDA897B008E20C1 /* Rx */,
+				1AE955961FD937D700E5E1A4 /* Search */,
+				1A41E9351FDA7ADA008E20C1 /* Style */,
 			);
 			path = TwistSearchClient;
 			sourceTree = "<group>";
@@ -147,12 +154,15 @@
 		1A83E6C31FD968DC004119D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1A42A5651FD89907007546A8 /* TwistSearchClient.xcdatamodeld */,
-				1A89AD541FD96BFE00BCF800 /* Workspace+Parse.swift */,
 				1A89AD5A1FD97A8A00BCF800 /* CoreDataWrapper.swift */,
-				1A89AD601FD9C2DA00BCF800 /* SearchResult+Parse.swift */,
-				1A41E92D1FD9F81E008E20C1 /* SearchQuery+Helper.swift */,
 				1A41E92F1FD9FA52008E20C1 /* ParseError.swift */,
+				1A41E94D1FDA9C09008E20C1 /* ParserTypes.swift */,
+				1A41E92D1FD9F81E008E20C1 /* SearchQuery+Helper.swift */,
+				1A89AD601FD9C2DA00BCF800 /* SearchResult+Parse.swift */,
+				1AE9558D1FD89F8700E5E1A4 /* User.swift */,
+				1A41E9511FDA9E5B008E20C1 /* UserDefaults+User.swift */,
+				1A89AD541FD96BFE00BCF800 /* Workspace+Parse.swift */,
+				1A42A5651FD89907007546A8 /* TwistSearchClient.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,9 +174,8 @@
 				1AE9558B1FD89F0F00E5E1A4 /* Login.swift */,
 				1AE955931FD936E900E5E1A4 /* LoginResult.swift */,
 				1A42A5741FD899A9007546A8 /* LoginViewController.swift */,
-				1AE955B51FD93CA500E5E1A4 /* LoginViewController.xib */,
 				1AE9558F1FD8B13300E5E1A4 /* LoginViewModel.swift */,
-				1AE9558D1FD89F8700E5E1A4 /* User.swift */,
+				1AE955B51FD93CA500E5E1A4 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -176,9 +185,9 @@
 			children = (
 				1A41E9331FD9FE06008E20C1 /* SearchResultView.swift */,
 				1AE955971FD9381400E5E1A4 /* SearchViewController.swift */,
-				1A89AD5E1FD995B200BCF800 /* SearchViewController.xib */,
 				1A89AD5C1FD9949500BCF800 /* SearchViewModel.swift */,
 				1A83E6C01FD95D70004119D0 /* Twist.swift */,
+				1A89AD5E1FD995B200BCF800 /* SearchViewController.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -328,6 +337,7 @@
 				1A41E9301FD9FA52008E20C1 /* ParseError.swift in Sources */,
 				1A42A5751FD899A9007546A8 /* LoginViewController.swift in Sources */,
 				1AE955B81FD93DB200E5E1A4 /* NavigationService.swift in Sources */,
+				1A41E9521FDA9E5B008E20C1 /* UserDefaults+User.swift in Sources */,
 				1AE9558C1FD89F0F00E5E1A4 /* Login.swift in Sources */,
 				1AE955981FD9381400E5E1A4 /* SearchViewController.swift in Sources */,
 				1A89AD611FD9C2DA00BCF800 /* SearchResult+Parse.swift in Sources */,
@@ -337,11 +347,13 @@
 				1A89AD5D1FD9949500BCF800 /* SearchViewModel.swift in Sources */,
 				1A42A5671FD89907007546A8 /* TwistSearchClient.xcdatamodeld in Sources */,
 				1AE955941FD936E900E5E1A4 /* LoginResult.swift in Sources */,
+				1A41E9501FDA9DD4008E20C1 /* NSWindow+Twist.swift in Sources */,
 				1A83E6C11FD95D70004119D0 /* Twist.swift in Sources */,
 				1A89AD5B1FD97A8A00BCF800 /* CoreDataWrapper.swift in Sources */,
 				1A42A5621FD89907007546A8 /* AppDelegate.swift in Sources */,
 				1AE955901FD8B13300E5E1A4 /* LoginViewModel.swift in Sources */,
 				1A41E93E1FDA8987008E20C1 /* ActivityIndicator.swift in Sources */,
+				1A41E94E1FDA9C09008E20C1 /* ParserTypes.swift in Sources */,
 				1A41E92E1FD9F81E008E20C1 /* SearchQuery+Helper.swift in Sources */,
 				1A89AD551FD96BFE00BCF800 /* Workspace+Parse.swift in Sources */,
 				1A41E93B1FDA7E5E008E20C1 /* NSFont+Twist.swift in Sources */,

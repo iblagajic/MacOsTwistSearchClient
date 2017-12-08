@@ -54,7 +54,7 @@ class LoginViewController: NSViewController {
     }
 
     private func setStyle() {
-        view.layer?.backgroundColor = NSColor.background().cgColor
+        view.layer?.backgroundColor = NSColor.background.cgColor
         emailField.focusRingType = .none
         passwordField.focusRingType = .none
     }

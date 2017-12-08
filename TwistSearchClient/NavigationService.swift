@@ -18,32 +18,16 @@ class NavigationService {
     let disposeBag = DisposeBag()
 
     init() {
-        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 600, height: 400),
-                              styleMask: [.titled, .fullSizeContentView],
-                              backing: .buffered,
-                              defer: false)
-        window.isMovableByWindowBackground = true
-        window.titleVisibility = .hidden
-        window.titlebarAppearsTransparent = true
-        window.center()
-        mainWindow = window
-        window.title = "Twist"
-        window.orderFrontRegardless()
 
-        let controller = NSWindowController(window: window)
-        mainController = controller
+        mainWindow = .standard
+        mainController = NSWindowController(window: mainWindow)
+        mainController.showWindow(mainWindow)
 
-        let userDefaults = UserDefaults.standard
-        if let userName = userDefaults.string(forKey: "name"),
-            let userToken = userDefaults.string(forKey: "token") {
-            let userId = userDefaults.integer(forKey: "id")
-            let user = User(id: userId, token: userToken, name: userName)
+        if let user = UserDefaults.currentUser {
             showSearch(for: user)
         } else {
             showLogin()
         }
-
-        controller.showWindow(window)
     }
 
     private func showLogin() {

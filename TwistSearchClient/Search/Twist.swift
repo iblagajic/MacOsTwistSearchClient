@@ -15,19 +15,18 @@ enum TwistError: Error {
 
 class Twist {
 
+    static let baseUrl = "https://staging.twistapp.com/api/v2"
+    
     private let token: String
     private let coreDataWrapper = CoreDataWrapper()
 
     init(with user: User) {
         self.token = user.token
-        let userDefaults = UserDefaults.standard
-        userDefaults.setValue(user.name, forKey: "name")
-        userDefaults.setValue(user.token, forKey: "token")
-        userDefaults.setValue(user.id, forKey: "id")
+        UserDefaults.save(user: user)
     }
 
     func getWorkspace() -> Observable<Workspace?> {
-        guard let url = URL(string: "https://staging.twistapp.com/api/v2/workspaces/get") else {
+        guard let url = URL(string: "\(Twist.baseUrl)/workspaces/get") else {
             return Observable.error(TwistError.invalidUrl)
         }
         var request = URLRequest(url: url)
@@ -43,7 +42,7 @@ class Twist {
         if query.isEmpty {
             return Observable.empty()
         }
-        guard let url = URL(string: "https://staging.twistapp.com/api/v2/search/query?query=\(query)") else {
+        guard let url = URL(string: "\(Twist.baseUrl)/search/query?query=\(query)") else {
             return Observable.error(TwistError.invalidUrl)
         }
         var request = URLRequest(url: url)
