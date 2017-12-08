@@ -10,7 +10,7 @@ import AppKit
 import RxSwift
 import RxCocoa
 
-class SearchViewController: NSViewController {
+class SearchViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var signOutButton: NSButton!
@@ -20,6 +20,11 @@ class SearchViewController: NSViewController {
     var signOut: Observable<Void>?
 
     private var viewModel: SearchViewModel!
+    private var searchResults: [SearchResult]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     let disposeBag = DisposeBag()
 
@@ -31,6 +36,8 @@ class SearchViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signOutButton.title = "Sign out"
+        tableView.gridColor = .lightGray
+        tableView.gridStyleMask = .solidHorizontalGridLineMask
         viewModel.workspace.asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] workspace in
                 if let name = workspace?.name {
@@ -45,9 +52,22 @@ class SearchViewController: NSViewController {
             .disposed(by: disposeBag)
 
         viewModel.searchResult.asDriver(onErrorJustReturn: [])
-            .drive(onNext: { result in
-                print(result)
+            .drive(onNext: { [weak self] result in
+                self?.searchResults = result
             }).disposed(by: disposeBag)
+    }
+
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return searchResults?.count ?? 0
+    }
+
+    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        let identifier = NSUserInterfaceItemIdentifier(rawValue: "View")
+        let searchResultView = tableView.makeView(withIdentifier: identifier, owner: nil) as? SearchResultView
+        if let searchResults = searchResults {
+            searchResultView?.update(with: searchResults[row])
+        }
+        return searchResultView
     }
     
 }

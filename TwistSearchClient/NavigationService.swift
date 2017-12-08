@@ -19,10 +19,12 @@ class NavigationService {
 
     init() {
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 600, height: 400),
-                              styleMask: [.titled],
+                              styleMask: [.titled, .fullSizeContentView],
                               backing: .buffered,
                               defer: false)
         window.isMovableByWindowBackground = true
+        window.titleVisibility = .hidden
+        window.titlebarAppearsTransparent = true
         window.center()
         mainWindow = window
         window.title = "Twist"
