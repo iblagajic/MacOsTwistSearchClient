@@ -41,7 +41,6 @@ enum LoginResult {
 }
 
 enum LoginError: Error {
-    case invalidUrl
     case invalidResponse
     case invalidInput
 }

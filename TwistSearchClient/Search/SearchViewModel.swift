@@ -13,7 +13,7 @@ class SearchViewModel {
     private let twist: Twist
     let searchText = PublishSubject<String>()
     let workspace: Observable<Workspace?>
-    let searchResult: Observable<[SearchResult]>
+    let searchResult: Observable<SearchQueryResult>
 
     init(for user: User) {
         self.twist = Twist(with: user)

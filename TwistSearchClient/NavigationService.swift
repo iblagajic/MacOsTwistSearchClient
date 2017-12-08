@@ -48,9 +48,17 @@ class NavigationService {
     private func showSearch(for user: User) {
         let searchViewController = SearchViewController(for: user)
         mainWindow.contentViewController = searchViewController
-        searchViewController.signOut?.asDriver(onErrorJustReturn: ())
+
+        searchViewController.signOut?
             .drive(onNext: { [weak self] in
                 self?.showLogin()
+            }).disposed(by: disposeBag)
+
+        searchViewController.searchError?
+            .drive(onNext: { [weak self] err in
+                if let err = err {
+                    self?.presentAlert(with: err.localizedDescription)
+                }
             }).disposed(by: disposeBag)
     }
 

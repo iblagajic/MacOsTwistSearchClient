@@ -17,7 +17,8 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
     @IBOutlet weak var searchField: NSSearchField!
     @IBOutlet weak var tableView: NSTableView!
 
-    var signOut: Observable<Void>?
+    var signOut: Driver<Void>?
+    var searchError: Driver<Error?>?
 
     private var viewModel: SearchViewModel!
     private var searchResults: [SearchResult]? {
@@ -55,13 +56,19 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
 
         signOut = signOutButton.rx.tap
             .flatMap(viewModel.signOut)
+            .asDriver(onErrorJustReturn: ())
 
         searchField.rx.text.orEmpty.changed
             .throttle(0.5, scheduler: MainScheduler.instance)
             .bind(to: viewModel.searchText)
             .disposed(by: disposeBag)
 
-        viewModel.searchResult.asDriver(onErrorJustReturn: [])
+        let searchResult = viewModel.searchResult
+            .asDriver(onErrorJustReturn: SearchQueryResult.success(result: []))
+
+        self.searchError = searchResult.map { $0.errorValue }
+        searchResult
+            .map { $0.resultValue }
             .drive(onNext: { [weak self] result in
                 self?.searchResults = result
             }).disposed(by: disposeBag)

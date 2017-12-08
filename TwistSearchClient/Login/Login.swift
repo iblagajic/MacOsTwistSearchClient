@@ -13,7 +13,7 @@ class Login {
 
     func login(withEmail email: String, password: String) -> Observable<LoginResult> {
         guard let url = URL(string: "\(Twist.baseUrl)/users/login") else {
-            return Observable.just(.error(err: LoginError.invalidUrl))
+            return Observable.just(.error(err: TwistError.invalidUrl))
         }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

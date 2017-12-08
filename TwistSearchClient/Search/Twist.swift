@@ -38,7 +38,7 @@ class Twist {
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
     }
 
-    func search(query: String) -> Observable<[SearchResult]> {
+    func search(query: String) -> Observable<SearchQueryResult> {
         if query.isEmpty {
             return Observable.empty()
         }
@@ -51,7 +51,10 @@ class Twist {
         return URLSession.shared.rx.json(request: request)
             .observeOn(MainScheduler.instance)
             .map { [weak self] payload in
-                return try self?.coreDataWrapper.updateSearchResults(withPayload: payload, for: query) ?? []
+                let result = try self?.coreDataWrapper.updateSearchResults(withPayload: payload, for: query) ?? []
+                return SearchQueryResult.success(result: result)
+            }.catchError { error in
+                Observable.just(SearchQueryResult.error(err: error))
             }.subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
     }
 
