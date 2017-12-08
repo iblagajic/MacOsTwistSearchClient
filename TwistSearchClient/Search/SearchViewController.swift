@@ -35,9 +35,9 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        signOutButton.title = "Sign out"
-        tableView.gridColor = .lightGray
-        tableView.gridStyleMask = .solidHorizontalGridLineMask
+
+        setStyle()
+        signOutButton.title = "Log out"
 
         if let query = viewModel.lastSearchQuery()?.query {
             searchField.stringValue = query
@@ -52,8 +52,10 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
                     self?.titleLabel.stringValue = name
                 }
             }).disposed(by: disposeBag)
+
         signOut = signOutButton.rx.tap
             .flatMap(viewModel.signOut)
+
         searchField.rx.text.orEmpty.changed
             .throttle(0.5, scheduler: MainScheduler.instance)
             .bind(to: viewModel.searchText)
@@ -63,6 +65,16 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
             .drive(onNext: { [weak self] result in
                 self?.searchResults = result
             }).disposed(by: disposeBag)
+    }
+
+    private func setStyle() {
+        tableView.gridColor = .lightGray
+        tableView.gridStyleMask = .solidHorizontalGridLineMask
+        view.layer?.backgroundColor = NSColor.action().cgColor
+        titleLabel.textColor = NSColor.white
+        titleLabel.font = NSFont.header()
+        searchField.focusRingType = .none
+        searchField.textColor = NSColor.primaryText()
     }
 
     func numberOfRows(in tableView: NSTableView) -> Int {

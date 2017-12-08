@@ -10,6 +10,7 @@ import RxSwift
 
 class LoginViewModel {
 
+    let activityIndicator = ActivityIndicator()
     private let login = Login()
 
     func login(withEmail email: String?, password: String?) -> Observable<LoginResult> {
@@ -18,6 +19,7 @@ class LoginViewModel {
                 return Observable.just(.error(err: LoginError.invalidInput))
         }
         return login.login(withEmail: email, password: password)
+            .trackActivity(activityIndicator)
     }
     
 }

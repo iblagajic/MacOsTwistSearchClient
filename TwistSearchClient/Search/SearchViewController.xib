@@ -22,7 +22,10 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zaz-im-T3k">
-                    <rect key="frame" x="22" y="539" width="406" height="22"/>
+                    <rect key="frame" x="22" y="515" width="406" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ct8-E2-GDB"/>
+                    </constraints>
                     <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" maximumRecents="10" id="pCm-3d-Ppy">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -30,7 +33,7 @@
                     </searchFieldCell>
                 </searchField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a1h-hI-Pak">
-                    <rect key="frame" x="223" y="572" width="4" height="17"/>
+                    <rect key="frame" x="223" y="567" width="4" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="NGI-n2-hMI">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -38,20 +41,20 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lHG-kf-RE9">
-                    <rect key="frame" x="394" y="563" width="40" height="32"/>
-                    <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="S7P-C6-7IH">
+                    <rect key="frame" x="394" y="558" width="40" height="32"/>
+                    <buttonCell key="cell" type="push" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="S7P-C6-7IH">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="119" horizontalPageScroll="10" verticalLineScroll="119" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnw-um-8Fp">
-                    <rect key="frame" x="0.0" y="0.0" width="450" height="531"/>
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="121" horizontalPageScroll="10" verticalLineScroll="121" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnw-um-8Fp">
+                    <rect key="frame" x="0.0" y="0.0" width="450" height="504"/>
                     <clipView key="contentView" id="Dqw-7S-rqk">
-                        <rect key="frame" x="1" y="1" width="448" height="529"/>
+                        <rect key="frame" x="1" y="1" width="448" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="117" rowSizeStyle="automatic" viewBased="YES" floatsGroupRows="NO" id="Efh-Sl-yFr">
-                                <rect key="frame" x="0.0" y="0.0" width="448" height="529"/>
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="119" rowSizeStyle="automatic" viewBased="YES" floatsGroupRows="NO" id="Efh-Sl-yFr">
+                                <rect key="frame" x="0.0" y="0.0" width="448" height="502"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -71,11 +74,11 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <customView identifier="View" id="Ao0-Hq-fmD" customClass="SearchResultView" customModule="TwistSearchClient" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="1" width="445" height="117"/>
+                                                <rect key="frame" x="1" y="1" width="445" height="119"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SNw-kw-wif">
-                                                        <rect key="frame" x="31" y="78" width="40" height="17"/>
+                                                        <rect key="frame" x="31" y="80" width="40" height="17"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="tmN-ei-1tv">
                                                             <font key="font" metaFont="systemBold"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -83,7 +86,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aFv-lj-VMR">
-                                                        <rect key="frame" x="390" y="79" width="35" height="16"/>
+                                                        <rect key="frame" x="390" y="81" width="35" height="16"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="gVf-BX-lHh">
                                                             <font key="font" metaFont="systemLight" size="12"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -91,9 +94,9 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3VP-w5-Nhk">
-                                                        <rect key="frame" x="31" y="33" width="372" height="34"/>
+                                                        <rect key="frame" x="31" y="33" width="372" height="36"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="34" id="GeD-pX-LP8"/>
+                                                            <constraint firstAttribute="height" constant="36" id="GeD-pX-LP8"/>
                                                         </constraints>
                                                         <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="justified" title="Multiline Label" id="muO-EG-O8Z">
                                                             <font key="font" metaFont="system"/>
@@ -141,10 +144,10 @@
             </subviews>
             <constraints>
                 <constraint firstItem="cnw-um-8Fp" firstAttribute="leading" secondItem="qQL-4R-aan" secondAttribute="leading" id="4As-em-Ryi"/>
-                <constraint firstItem="cnw-um-8Fp" firstAttribute="top" secondItem="Zaz-im-T3k" secondAttribute="bottom" constant="8" id="6f0-3D-rtK"/>
+                <constraint firstItem="cnw-um-8Fp" firstAttribute="top" secondItem="Zaz-im-T3k" secondAttribute="bottom" constant="11" id="6f0-3D-rtK"/>
                 <constraint firstAttribute="bottom" secondItem="cnw-um-8Fp" secondAttribute="bottom" id="A0H-9m-NEW"/>
-                <constraint firstItem="Zaz-im-T3k" firstAttribute="top" secondItem="a1h-hI-Pak" secondAttribute="bottom" constant="11" id="CCr-iA-yij"/>
-                <constraint firstItem="a1h-hI-Pak" firstAttribute="top" secondItem="qQL-4R-aan" secondAttribute="top" constant="11" id="EHd-P4-4Hr"/>
+                <constraint firstItem="Zaz-im-T3k" firstAttribute="top" secondItem="a1h-hI-Pak" secondAttribute="bottom" constant="22" id="CCr-iA-yij"/>
+                <constraint firstItem="a1h-hI-Pak" firstAttribute="top" secondItem="qQL-4R-aan" secondAttribute="top" constant="16" id="EHd-P4-4Hr"/>
                 <constraint firstItem="lHG-kf-RE9" firstAttribute="centerY" secondItem="a1h-hI-Pak" secondAttribute="centerY" id="OJ7-OS-1Sl"/>
                 <constraint firstAttribute="trailing" secondItem="Zaz-im-T3k" secondAttribute="trailing" constant="22" id="Tzm-3A-xqW"/>
                 <constraint firstItem="a1h-hI-Pak" firstAttribute="centerX" secondItem="qQL-4R-aan" secondAttribute="centerX" id="Vtf-TV-N6W"/>

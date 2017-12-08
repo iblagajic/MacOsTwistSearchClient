@@ -9,7 +9,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="LoginViewController" customModule="TwistSearchClient" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicatorView" destination="Zqv-uM-5ge" id="mh6-gc-mhb"/>
                 <outlet property="emailField" destination="SOf-cN-Rl8" id="36v-es-hRG"/>
+                <outlet property="imageView" destination="GVB-9G-kOM" id="iZg-uP-ZEb"/>
                 <outlet property="loginButton" destination="Quu-pO-cwy" id="ymS-Sy-MJC"/>
                 <outlet property="passwordField" destination="TAA-Kr-hMN" id="F96-aZ-UGt"/>
                 <outlet property="view" destination="ypi-Yx-aTE" id="u6S-i9-UCf"/>
@@ -23,6 +25,9 @@
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GVB-9G-kOM">
                     <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="Eyf-fI-ilE"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="JeD-wa-0II"/>
                 </imageView>
                 <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T4q-nR-HIH">
@@ -33,7 +38,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="6am-3O-Igg"/>
                             </constraints>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="s5k-1D-ZcH">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" bezelStyle="round" id="s5k-1D-ZcH">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -44,7 +49,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="rQC-RE-S7A"/>
                             </constraints>
-                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="TuL-Aq-zWt">
+                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="TuL-Aq-zWt">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -83,6 +88,9 @@
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
+                <progressIndicator wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Zqv-uM-5ge">
+                    <rect key="frame" x="434" y="184" width="32" height="32"/>
+                </progressIndicator>
             </subviews>
             <constraints>
                 <constraint firstItem="GVB-9G-kOM" firstAttribute="width" secondItem="ypi-Yx-aTE" secondAttribute="width" multiplier="0.5" id="5dP-gh-U2c"/>
@@ -90,7 +98,9 @@
                 <constraint firstItem="T4q-nR-HIH" firstAttribute="centerY" secondItem="ypi-Yx-aTE" secondAttribute="centerY" id="cdU-9v-WhC"/>
                 <constraint firstItem="GVB-9G-kOM" firstAttribute="leading" secondItem="ypi-Yx-aTE" secondAttribute="leading" id="d5h-lK-xvh"/>
                 <constraint firstAttribute="trailing" secondItem="T4q-nR-HIH" secondAttribute="trailing" constant="22" id="dRF-ju-rsO"/>
+                <constraint firstItem="Zqv-uM-5ge" firstAttribute="centerX" secondItem="T4q-nR-HIH" secondAttribute="centerX" id="ngZ-Wj-doL"/>
                 <constraint firstAttribute="bottom" secondItem="GVB-9G-kOM" secondAttribute="bottom" id="nwf-8p-Fd3"/>
+                <constraint firstItem="Zqv-uM-5ge" firstAttribute="centerY" secondItem="ypi-Yx-aTE" secondAttribute="centerY" id="qgK-Ms-P26"/>
                 <constraint firstItem="T4q-nR-HIH" firstAttribute="leading" secondItem="GVB-9G-kOM" secondAttribute="trailing" constant="22" id="zdY-nt-0aS"/>
             </constraints>
         </view>

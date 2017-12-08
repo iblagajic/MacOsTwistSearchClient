@@ -8,5 +8,6 @@ target 'TwistSearchClient' do
   # Pods for TwistSearchClient
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxSwiftUtilities'
 
 end

@@ -14,6 +14,20 @@ class  SearchResultView: NSTableRowView {
     @IBOutlet weak var snippetLabel: NSTextField!
     @IBOutlet weak var timeLabel: NSTextField!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setStyle()
+    }
+
+    private func setStyle() {
+        titleLabel.font = NSFont.title()
+        titleLabel.textColor = NSColor.primaryText()
+        snippetLabel.font = NSFont.body()
+        snippetLabel.textColor = NSColor.primaryText()
+        timeLabel.font = NSFont.subtitle()
+        timeLabel.textColor = NSColor.primaryText()
+    }
+
     func update(with searchResult: SearchResult) {
         titleLabel.stringValue = searchResult.title ?? ""
         snippetLabel.stringValue = searchResult.snippet ?? ""

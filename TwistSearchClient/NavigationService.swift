@@ -55,8 +55,8 @@ class NavigationService {
                 switch result {
                 case .success(let user):
                     self?.showSearch(for: user)
-                case .error(_):
-                    self?.presentAlert(with: result.errorMessage)
+                case .error(let err):
+                    self?.presentAlert(with: result.errorMessage ?? err.localizedDescription)
                 }
             }).disposed(by: disposeBag)
     }
