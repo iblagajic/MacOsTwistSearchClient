@@ -21,6 +21,10 @@ class SearchViewModel {
         searchResult = searchText.flatMap(twist.search)
     }
 
+    func lastSearchQuery() -> SearchQuery? {
+        return twist.lastSearchQuery()
+    }
+
     func signOut() -> Observable<Void> {
         return twist.signOut()
     }

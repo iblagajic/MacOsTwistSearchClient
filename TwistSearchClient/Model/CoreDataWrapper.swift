@@ -38,6 +38,12 @@ class CoreDataWrapper {
         return searchResults
     }
 
+    func fetchLastSearchQuery() -> SearchQuery? {
+        let request = NSFetchRequest<SearchQuery>(entityName: "SearchQuery")
+        let queries = try? persistentContainer.viewContext.fetch(request)
+        return queries?.first
+    }
+
     func save() {
         // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
         let context = persistentContainer.viewContext

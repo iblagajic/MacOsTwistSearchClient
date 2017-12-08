@@ -38,6 +38,14 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
         signOutButton.title = "Sign out"
         tableView.gridColor = .lightGray
         tableView.gridStyleMask = .solidHorizontalGridLineMask
+
+        if let query = viewModel.lastSearchQuery()?.query {
+            searchField.stringValue = query
+        }
+        if let results = viewModel.lastSearchQuery()?.results {
+            searchResults = results.sortedArray(using: []) as? [SearchResult]
+        }
+
         viewModel.workspace.asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] workspace in
                 if let name = workspace?.name {

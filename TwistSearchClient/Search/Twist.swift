@@ -56,6 +56,10 @@ class Twist {
             }.subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
     }
 
+    func lastSearchQuery() -> SearchQuery? {
+        return coreDataWrapper.fetchLastSearchQuery()
+    }
+
     func signOut() -> Observable<Void> {
         if let domain = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: domain)
